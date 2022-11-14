@@ -13,9 +13,10 @@ const renderBookshop = () => {
         elementFactory('h4', 'book__title', '.book', book);
         elementFactory('p', 'book__author', '.book', book);
         elementFactory('p', 'book__price', '.book', book);
-        elementFactory('button', 'button__info', '.book', book);
+        elementFactory('div', 'button__box', '.book', book);
+        elementFactory('button', 'button__info', '.button__box', book);
         document.querySelectorAll('.button__info')[book].innerHTML = 'Show more';
-        elementFactory('button', 'button__add', '.book', book);
+        elementFactory('button', 'button__add', '.button__box', book);
         document.querySelectorAll('.button__add')[book].innerHTML = 'Add to the cart'
 
 // populating the book card stags

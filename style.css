@@ -132,21 +132,27 @@ wrapper__shopping-cart {
     width: 100%;
 }
 
+.button__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70px;
+    margin-top: 10px;
+}
+
 .button__info {
     width: 200px;
     height: 30px;
     align-self: center;
     border-radius: 5px;
-    border: none;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    border: 1px solid grey;
 }
 
 .button__add {
     width: 200px;
     height: 30px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid grey;
     align-self: center;
 }
 
@@ -155,7 +161,7 @@ wrapper__shopping-cart {
     height: 30px;
     background-color: #540bda;
     border-radius: 5px;
-    border: none;
+    border: 1px solid grey;
     margin: 20px 0;
 }
 
@@ -208,8 +214,7 @@ wrapper__shopping-cart {
     width: 200px;
     height: 30px;
     border-radius: 5px;
-    border-radius: 5px;
-    border: none;
+    border: 1px solid grey;
     margin: 20px 0;
 }
 
