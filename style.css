@@ -18,16 +18,19 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 } */
 
 html {
-    font-size: 10px;
+    font-size: 12px;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-size: 1.6rem;
     font-family: 'Open Sans', Verdana, sans-serif;
+
 }
 
+h4 {
+    font-size: 16px;
+}
 /* .wrapper {
     max-width: 1280px;
     margin: 0 auto;
@@ -59,6 +62,8 @@ wrapper__shopping-cart {
 }
 
 .header {
+    font-size: 1.6rem;
+    color: antiquewhite;
     height: 100px;
     width: 100%;
     background: linear-gradient(45deg, #e66465, #9198e5);
@@ -123,25 +128,52 @@ wrapper__shopping-cart {
     padding: 10px;
     margin: 10px;
     background-color: white;
-    border: solid 1px red;
-    /* border-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59) 5; */
+    border: solid 1px gray;
     border-radius: 5px;
+    cursor: move;
 }
 
-.book__img {
+.book.dragging {
+    opacity: 50%;
+}
+
+.book__shopping-cart {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 5px;
+    cursor: move;
+}
+
+.book__image {
     width: 100%;
+    border: 1px solid gray;
+}
+
+.title__box {
+    display: flex;
+    flex-direction: column;
+    max-height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .button__box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* align-self: flex-end; */
     height: 70px;
     margin-top: 10px;
 }
 
 .button__info {
-    width: 200px;
+    width: 150px;
     height: 30px;
     align-self: center;
     border-radius: 5px;
@@ -149,11 +181,37 @@ wrapper__shopping-cart {
 }
 
 .button__add {
-    width: 200px;
+    width: 150px;
     height: 30px;
     border-radius: 5px;
     border: 1px solid grey;
+    background-color: green;
     align-self: center;
+}
+
+.button__close {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: #e66465;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.button__close-round__box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button__close-round {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid grey;
+    background-color: white;
+    align-self: center;
+    margin-bottom: 10px;
 }
 
 .button__checkout {
@@ -165,18 +223,40 @@ wrapper__shopping-cart {
     margin: 20px 0;
 }
 
-.book__content-info {
+.background-dim {
     display: none;
 }
 
-.book__content-info.active {
+.background-dim.active {
+    position: absolute;
+    display: block;
+    height: 1000%;
+    width: 100%;
+    background-color: #8a78ac;
+    opacity: 80%;
+    z-index: 10;
+}
+
+.book__pop-up {
+    display: none;
+}
+
+.book__pop-up h4{
+    margin-bottom: 10px;
+}
+
+.book__pop-up.active {
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 150px);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    max-height: 100%;
     width: 300px;
     padding: 10px;
-    background-color: burlywood;
-    border: solid 3px #540bda;
+    background-color: white;
+    border: solid 1px #540bda;
+    border-radius: 25px;
     z-index: 10;
 }
 
@@ -195,9 +275,36 @@ wrapper__shopping-cart {
     padding: 20px 0;
 }
 
-/* checkout form */
+.shopping-cart__cart {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    max-height: 100%;
+    border: dashed 5px red;
+    border-radius: 30px;
+    padding: 30px;
+}
 
+.shopping-cart__cart.active {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    max-height: 100%;
+    border: dashed 5px red;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+/* checkout form */
 .checkout-form__layout {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.checkout-form__layout.active {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -222,8 +329,7 @@ wrapper__shopping-cart {
 
 .footer {
     width: 100%;
-    height: 50px;
-    padding: 20px 0;
+    font-size: 16px;
     color: lightgoldenrodyellow;
     background: linear-gradient(45deg, #e66465, #9198e5);
 }
@@ -231,6 +337,8 @@ wrapper__shopping-cart {
 .footer__contents {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 80px;
 }
 
 .rs-logo__footer {
