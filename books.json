@@ -48,7 +48,7 @@
     "description": "If you want to learn how to build efficient React applications, this is your book. Ideal for web developers and software engineers who understand how JavaScript, CSS, and HTML work in the browser, this updated edition provides best practices and patterns for writing modern React code. No prior knowledge of React or functional JavaScript is necessary."
     },
     {
-    "author": "Bradley Meck Alex Young and Mike Cantelon",
+    "author": "Bradley Meck, Alex Young and Mike Cantelon",
     "imageLink": "./assets/images/Node-in-Action.jpg",
     "title": "Node.js in Action",
     "price": 38,
