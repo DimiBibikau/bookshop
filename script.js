@@ -131,7 +131,7 @@ const renderBookshop = () => {
 
     elementFactory('button', 'button__checkout', '.shopping-cart__contents');
     const buyButton = document.querySelector('.button__checkout');
-    buyButton.textContent = 'Buy';
+    buyButton.textContent = 'Confirm order';
     buyButton.type = 'button';
     buyButton.addEventListener('click', () => {
         document.querySelector('.checkout-form__layout').style.display= 'flex';
@@ -208,7 +208,7 @@ const renderBookshop = () => {
     elementFactory('button', 'button__form-complete', '.checkout-form__layout');
     const submitButton = document.querySelector('.button__form-complete');
     submitButton.type = 'submit';
-    submitButton.innerHTML = 'Submit';
+    submitButton.innerHTML = 'Complete';
 //footer
     elementFactory('footer', 'footer', 'body');
     elementFactory('div', 'wrapper__footer', '.footer');

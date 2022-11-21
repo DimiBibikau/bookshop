@@ -7,7 +7,7 @@
     </head>
     <body>
         <form class="checkout-form__layout">
-            <fieldset>
+            <fieldset class="form__fieldset">
                 <label for="fname">Name</label>
                 <input type="text" id="fname" name="fname" minlength="4" pattern="[a-zA-Z]+" required>
                 <label for="lname">Surname</label>
@@ -15,23 +15,23 @@
                 <label for="delivery-date">Delivery date</label>
                 <input type="date" id="delivery-date" name="delivery-date" min="2022-05-24" required>
             </fieldset>
-            <fieldset>
+            <fieldset class="form__fieldset">
                 <legend>Delivery address:</legend>
                 <label for="address-street">Street</label>
                 <input type="street" id="street" name="street" min="1" minlength="5" pattern="[a-zA-Z0-9]+" required>
                 <label for="address-street">House number</label>
-                <input type="number" id="house" name="house" min="1" required>
+                <input type="number" id="house" name="house" min="1" pattern="[1-9]+" required>
                 <label for="address-flat">Flat number</label>
-                <input type="number" id="flat" name="flat" min="1" pattern="[a-zA-Z0-9]+" required>
+                <input type="text" id="flat" name="flat" min="1" pattern="^[0-9](-?[0-9])-?[0-9]$" required>
             </fieldset>
-            <fieldset>
+            <fieldset class="form__fieldset">
                 <legend>Select a payment method:</legend>
                 <input type="radio" id="cash" name="payment" required>
                 <label for="cash">Cash</label>
                 <input type="radio" id="card" name="payment" required>
                 <label for="card">Card</label>
             </fieldset>
-            <fieldset>
+            <fieldset class="form__fieldset">
                 <legend>Select a gift:</legend>
                 <input type="checkbox" id="gift-checkbox" name="gift">
                 <label for="pack">pack as a gift</label>
@@ -42,6 +42,6 @@
                 <input type="checkbox" id="gift-checkbox" name="pencil">
                 <label for="pencil">branded pen or pencil</label>
             </fieldset>
-            <button type="submit">Complete</button>
+        </form>
     </body>
 </html>
